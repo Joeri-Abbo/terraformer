@@ -1,19 +1,19 @@
 name: tests
-
-on:
+true:
   push:
     branches:
     - master
   pull_request:
     branches:
     - master
-
 jobs:
   test:
     strategy:
       matrix:
-        platform: [ubuntu-latest, macos-latest]
-    runs-on: ${{ matrix.platform }}
+        platform:
+        - ubuntu-latest
+        - macos-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Install Go
